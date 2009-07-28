@@ -4,9 +4,12 @@
 
 require "open-uri"
 
-url   = ARGV.first
-data  = open(url)
+root  = ARGV.first
+data  = open(root)
 
 data.read.scan(/href="(.*mp3)"/).each do |filename|
-  `curl -O #{url}#{filename.first}`
+  url = filename.first
+  url = "#{root}#{url}" unless url =~ /^http/
+  url = URI.escape(url)
+  `curl -O "#{url}"`
 end
