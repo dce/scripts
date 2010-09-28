@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require "open-uri"
+require "json"
+require "pp"
+
+pp JSON.parse(open(ARGV.first).read)
