@@ -10,6 +10,6 @@ data  = open(root)
 data.read.scan(/href="(.*mp3)"/).each do |filename|
   url = filename.first
   url = "#{root}#{url}" unless url =~ /^http/
-  url = URI.escape(url)
+  p url
   `curl -O "#{url}"`
 end
