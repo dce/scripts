@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+if [ $2 ]
+then
+  dir=$2
+else
+  dir=.
+fi
+
+grep -lir "$1" $dir
+
