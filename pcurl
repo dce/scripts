@@ -3,6 +3,6 @@
 require "rubygems"
 require "open-uri"
 require "json"
-require "pp"
+require "ap"
 
-pp JSON.parse(open(ARGV.first).read)
+ap JSON.parse(open(ARGV.first).read)
