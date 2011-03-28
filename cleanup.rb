@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+#
 dirs = `ls -1 ~/Projects`.split(/\n/)
 
 dirs.each do |dir|
